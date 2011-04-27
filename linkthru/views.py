@@ -6,6 +6,7 @@ from datetime import datetime
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import RequestContext
 from django.http import HttpResponseRedirect 
+from django.contrib.admin.views.decorators import staff_member_required
 from linkthru.models import LinkThruBase, LinkClick, ImageLinkThru, LinkImpression
 
 def linkthru_view(request, id):
@@ -22,6 +23,7 @@ def linkthru_view(request, id):
         raise Http404
     return HttpResponseRedirect(link.url)
 
+@staff_member_required
 def linkthru_detail(request, id):
     link = get_object_or_404(LinkBase, id=id)
     return render_to_response('linkthru/linkthru_detail.html', locals(),
