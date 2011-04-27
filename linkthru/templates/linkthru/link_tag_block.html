@@ -1,0 +1,16 @@
+{% comment %}
+A instace of link.ase is passed to this tag.
+
+... more documentation needed ...
+
+{% endcomment %}
+
+<div class="rotator">
+  <ul>
+{% for link in links %}
+    {% if link.bannerlink.%}
+    <li class="{% if forloop.first %}show{% endif %}"><a href="{{link.get_absolute_url}}"><img src="{{link.imagelinkthru.content.url}}" alt="{{link}}" /></a></li>
+    {% endif %}
+{% endfor %}
+  </ul>
+</div>
