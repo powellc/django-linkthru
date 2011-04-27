@@ -1,29 +1,24 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='django-committees',
-    version=__import__('committees').__version__,
-    license="BSD",
+    name='django-linkthru',
+    version=__import__('linkthru').__version__,
+    license="GPLv3",
 
-    install_requires = [
-        'django-markup-mixin',
-        'django-extensions',
-        'simple_history',
-        'django-photologue',
-        'django-eventy',],
+    install_requires = ['django-extensions',],
 
-    description='A simple reusable application for managing a small orgs governance in a Django application.',
+    description='A riff on adzone, but without the advert cruft. Just text/images linking to arbitrary urls.',
     long_description=open('README.rst').read(),
 
     author='Colin Powell',
     author_email='colin@onecardinal.com',
 
-    url='http://github.com/powellc/django-committees',
-    download_url='http://github.com/powellc/django-committees/downloads',
+    url='http://github.com/powellc/django-linkthru',
+    download_url='http://github.com/powellc/django-linkthru/downloads',
 
     include_package_data=True,
 
-    packages=['committees'],
+    packages=['linkthru'],
 
     zip_safe=True,
     classifiers=[
