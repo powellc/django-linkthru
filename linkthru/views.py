@@ -15,9 +15,9 @@ def linkthru_view(request, id):
 
     """
     link = get_object_or_404(LinkThruBase, id=id)
-    logging.debug('Found ad: %s, redirecting...' % (ad))
+    logging.debug('Found linkthru: %s, redirecting...' % (link))
     try:
-        click = LinkClick(ad=ad, click_date=datetime.now(), source_ip=request.META.get('REMOTE_ADDR'))
+        click = LinkClick(link=link, click_date=datetime.now(), source_ip=request.META.get('REMOTE_ADDR'))
         click.save()
     except:
         raise Http404
