@@ -50,6 +50,10 @@ class LinkThruBase(TimeStampedModel):
         return "%s" % self.title
 
     @models.permalink
+    def get_view_url(self):
+        return ('lt-linkthru-view', (), {'id': self.pk,})
+
+    @models.permalink
     def get_absolute_url(self):
         return ('lt-linkthru-detail', (), {'id': self.pk,})
 
