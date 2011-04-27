@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-from linkthru.views import linkthru_view
+from linkthru.views import linkthru_view, linkthru_detail
 
 urlpatterns = patterns('',
     url(r'^view/(?P<id>[\d]+)/$', linkthru_view, name='lt-linkthru-view'),
