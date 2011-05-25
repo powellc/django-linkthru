@@ -23,7 +23,7 @@ def linkthru_view(request, id):
         raise Http404
     return HttpResponseRedirect(link.url)
 
-def linkthru_index(request):
+def linkthru_list(request):
     links = LinkThruBase.objects.enabled()
     return render_to_response('linkthru/linkthru_list.html', locals(),
                               context_instance=RequestContext(request))
